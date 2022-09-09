@@ -2,15 +2,16 @@ public class Main {
 
         // Домашнее задание 1
         // Задание 1
-    public static void Task1() {
+    public static void task1() {
 
         int purpose = 2_459_000;
-        int totalSavings = 0;
+        double totalSavings = 0;
         int sumInvesting = 29_000;
         int month = 0;
+        double interestOnTheDeposit = 1.01;
         while (totalSavings < purpose) {
 
-            totalSavings += sumInvesting;
+            totalSavings += sumInvesting * interestOnTheDeposit;
             month ++;
         }
         System.out.println("Месяц " + month + ", сумма накоплений равна " + totalSavings + " рублей");
@@ -18,7 +19,7 @@ public class Main {
     }
 
         // задание 2
-    public static void Task2() {
+    public static void task2() {
 
         int i = 0;
         while (i < 10) {
@@ -34,7 +35,7 @@ public class Main {
         System.out.println();
     }
         // Задание 3
-    public static void Task3() {
+    public static void task3() {
 
         long countryY = 12_000_000;
         int birthChildOneYear = 17;
@@ -53,80 +54,78 @@ public class Main {
             // Домашнее задание 2
             // Задание 1
 
-    public static void Task4() {
+    public static void task4() {
 
+        int purpose = 12_000_000;
         long sumDeposit = 15000;
         double percentInMonth = 1.07;
 
-        for (int i = 1; sumDeposit < 12_000_000; i++) {
+        for (int month = 1; sumDeposit < purpose; month++) {
             sumDeposit = (long) (sumDeposit * percentInMonth);
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + sumDeposit + " рублей");
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + sumDeposit + " рублей");
         }
         System.out.println();
     }
 
             // Задание 2
-    public static void Task5() {
+    public static void task5() {
 
+        int purpose = 12_000_000;
         long sumDeposit = 15000;
         double percentInMonth = 1.07;
 
-        for (int i = 1; sumDeposit < 12_000_000; i++) {
+        for (int month = 1; sumDeposit < purpose; month++) {
             sumDeposit = (long) (sumDeposit * percentInMonth);
-            if (i % 6 ==0) {
-                System.out.println("Месяц " + i + ", сумма накоплений равна " + sumDeposit + " рублей");
+            if (month % 6 ==0) {
+                System.out.println("Месяц " + month + ", сумма накоплений равна " + sumDeposit + " рублей");
             }
         }
         System.out.println();
     }
 
             // Задание 3
-    public static void Task6() {
+    public static void task6() {
 
         long sumDeposit = 15000;
         double percentInMonth = 1.07;
         int termSavings = 12 * 9;
 
-        for (int i = 1; i < termSavings; i++) {
+        for (int month = 1; month < termSavings; month++) {
             sumDeposit = (long) (sumDeposit * percentInMonth);
-            if (i % 6 ==0) {
-                System.out.println("Месяц " + i + ", сумма накоплений равна " + sumDeposit + " рублей");
+            if (month % 6 ==0) {
+                System.out.println("Месяц " + month + ", сумма накоплений равна " + sumDeposit + " рублей");
             }
         }
         System.out.println();
     }
 
             // Задание 4
-    public static void Task7() {
+    public static void task7() {
 
-        int week = 7;
         int firstFriday = 5;
-        for (int i = 1; i < 31; i++) {
-            if (i ==  firstFriday) {
-                System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет.");
-                firstFriday += week;
-            }
+        for (int day = firstFriday; day <= 31; day += 7) {
+            firstFriday = day;
+            System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет.");
         }
         System.out.println();
     }
 
             // Домашнее задание 3
             // задание 1
-    public static void Task8() {
+    public static void task8() {
 
-        int minYears = 1822;
-        int maxYears = 2122;
+        int currentYear = 2022;
+        int minYears = currentYear - 200;
+        int maxYears = currentYear + 100;
 
-        for (int i = 0; i < maxYears; i++) {
-            if (i % 79 == 0) {
-                if (i > minYears && i < maxYears)
-                    System.out.println(i);
-            }
+        for (int year = 0; year < maxYears; year += 79) {
+            if (year > minYears)
+                System.out.println(year);
         }
         System.out.println();
     }
 
-    public static void Task9() {
+    public static void task9() {
 
         int number = 2;
         int table = 0;
@@ -137,15 +136,15 @@ public class Main {
     }
     public static void main(String[] args) {
 
-        Task1();
-        Task2();
-        Task3();
-        Task4();
-        Task5();
-        Task6();
-        Task7();
-        Task8();
-        Task9();
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
+        task6();
+        task7();
+        task8();
+        task9();
 
     }
 }
